@@ -13,7 +13,7 @@
     name: go
     state: present
     auto_import_keys: yes
-  when: ansible_distribution_version is ['15.0', '15.1', '15.2', '15.3']
+  when: ansible_distribution_version in ['15.0', '15.1', '15.2', '15.3']
 
 - name: Install Telegraf
   ansible.builtin.zypper:
