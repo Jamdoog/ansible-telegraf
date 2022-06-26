@@ -1,5 +1,6 @@
 galaxy_info:
   author: James Ledger
+  role_name: telegraf
   description: Telegraf Install and Configuration
   company: 
 
@@ -27,21 +28,14 @@ galaxy_info:
   # To view available platforms and versions (or releases), visit:
   # https://galaxy.ansible.com/api/v1/platforms/
   #
-  # platforms:
-  # - name: Fedora
-  #   versions:
-  #   - all
-  #   - 25
-  # - name: SomePlatform
-  #   versions:
-  #   - all
-  #   - 1.0
-  #   - 7
-  #   - 99.99
   platforms:
     - name: Debian
       versions:
-        - all
+        - 10
+        - 11
+    - name: opensuse
+      versions:
+        - 15.4
     - name: EL
       versions:
         - 7
