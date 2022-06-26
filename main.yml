@@ -1,0 +1,6 @@
+---
+- hosts: telegraf
+  become: true
+  roles:
+   - base
+   

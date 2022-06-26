@@ -1,0 +1,14 @@
+---
+- name: Install Influx repository
+  ansible.builtin.yum_repository:
+    name: influxdb
+    description: InfluxDB Repository - RHEL \$releasever
+    baseurl: https://repos.influxdata.com/rhel/$releasever/$basearch/stable
+    gpgcheck: yes
+    enabled: yes
+    gpgkey: https://repos.influxdata.com/influxdb.key
+
+- name: Install Telegraf
+  ansible.builtin.dnf:
+    name: telegraf
+    state: latest

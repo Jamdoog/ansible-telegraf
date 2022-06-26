@@ -1,0 +1,12 @@
+---
+- name: Install GO repository 
+  community.general.zypper_repository:
+    repo: 'https://download.opensuse.org/repositories/devel:languages:go/$releasever/'
+    name: go
+    state: present
+    auto_import_keys: yes
+
+- name: Install Telegraf
+  ansible.builtin.zypper:
+    name: telegraf
+    state: present

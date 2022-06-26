@@ -1,0 +1,32 @@
+---
+- name: Check if Influx GPG is present
+  stat:
+    path: /etc/apt/trusted.gpg.d/influxdb.asc
+  register: gpg
+
+- name: Create Influx GPG File
+  ansible.builtin.file:
+    path: /etc/apt/trusted.gpg.d/influxdb.asc
+    state: touch
+    mode: 0644
+    owner: root
+    group: root
+  when: gpg.stat.exists == false
+
+- name: Install Influx GPG Key
+  ansible.builtin.apt_key:
+    url: https://repos.influxdata.com/influxdb.key
+    state: present
+    keyring: /etc/apt/trusted.gpg.d/influxdb.asc
+
+- name: Install Influx Repository
+  ansible.builtin.apt_repository:
+    repo: 'deb https://repos.influxdata.com/"{{ ansible_distribution | lower }}" "{{ ansible_distribution_release }}" stable'
+    state: present
+    filename: influxdb
+
+- name: Install Telegraf
+  ansible.builtin.apt:
+    name: telegraf
+    update_cache: yes
+    state: latest

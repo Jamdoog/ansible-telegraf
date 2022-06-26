@@ -1,0 +1,9 @@
+---
+- name: Deploy Telegraf Template
+  template: 
+    src: telegraf.conf
+    dest: /etc/telegraf/telegraf.conf
+    owner: root
+    group: root
+    mode: 0644
+  notify: telegraf
