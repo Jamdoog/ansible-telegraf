@@ -15,9 +15,9 @@ galaxy_info:
   # - GPL-3.0-only
   # - Apache-2.0
   # - CC-BY-4.0
-  license: GPL-3.0-only
+  license: "license (BSD, MIT)"
 
-  min_ansible_version: 2.1
+  min_ansible_version: 2.4
 
   # If this a Container Enabled role, provide the minimum Ansible Container version.
   # min_ansible_container_version:
@@ -31,8 +31,8 @@ galaxy_info:
   platforms:
     - name: Debian
       versions:
-        - 10
-        - 11
+        - buster
+        - bullseye
     - name: opensuse
       versions:
         - 15.4
