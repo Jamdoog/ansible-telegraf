@@ -1,10 +1,19 @@
 ---
-- name: Install GO repository 
+- name: Install GO repository (OpenSUSE 15.4)
   community.general.zypper_repository:
     repo: 'https://download.opensuse.org/repositories/devel:languages:go/$releasever/'
     name: go
     state: present
     auto_import_keys: yes
+  when: ansble_distribution_version == "15.4"
+
+- name: Install GO repository (OpenSUSE 15.0 - 15.3)
+  community.general.zypper_repository:
+    repo: 'https://download.opensuse.org/repositories/devel:languages:go/openSUSE_Leap_$releasever/'
+    name: go
+    state: present
+    auto_import_keys: yes
+  when: ansible_distribution_version is ['15.0', '15.1', '15.2', '15.3']
 
 - name: Install Telegraf
   ansible.builtin.zypper:
