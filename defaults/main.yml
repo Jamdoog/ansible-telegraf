@@ -1,6 +1,4 @@
----
-- hosts: telegraf
-  become: true
-  roles:
-   - base
-   
+REMOTE_IP: "http://"
+REMOTE_DATABASE: ""
+REMOTE_USERNAME: ""
+REMOTE_PASSWORD: ""

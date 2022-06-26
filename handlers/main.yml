@@ -1,2 +1,5 @@
----
-# handlers file for telegraf
+- name: telegraf
+  service: 
+    name: telegraf
+    state: reloaded
+    enabled: yes

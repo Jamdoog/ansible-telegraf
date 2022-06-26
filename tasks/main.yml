@@ -1,2 +1,13 @@
 ---
-# tasks file for telegraf
+- include_tasks: install_apt.yml
+  when:
+    ansible_os_family in ["Debian"]
+
+- include_tasks: install_dnf.yml
+  when:
+    ansible_os_family in ["RedHat"]
+
+- include_tasks: install_suse.yml
+  when: ansible_os_family in ["Suse"]
+
+- include_tasks: template_deploy.yml
