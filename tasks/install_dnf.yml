@@ -8,6 +8,11 @@
     enabled: yes
     gpgkey: https://repos.influxdata.com/influxdb.key
 
+- name: Install GPG
+  dnf:
+    name: gnupg
+    state: present
+
 - name: Install Telegraf
   ansible.builtin.dnf:
     name: telegraf
