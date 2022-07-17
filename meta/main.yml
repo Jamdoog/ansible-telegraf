@@ -39,15 +39,16 @@ galaxy_info:
         - 15.2
         - 15.1
         - 15.0
+        - tumbleweed
     - name: EL
       versions:
         - 7
         - 8
     - name: Ubuntu
       versions:
-        - 22.04
-        - 20.04
-        - 18.04
+        - jammy
+        - focal
+        - bionic
 
   galaxy_tags: []
     # List tags for your role here, one per line. A tag is a keyword that describes
