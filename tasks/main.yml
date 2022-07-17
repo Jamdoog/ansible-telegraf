@@ -1,13 +1,11 @@
 ---
 - include_tasks: install_apt.yml
-  when:
-    ansible_os_family in ["Debian"]
+  when: ansible_os_family == 'Debian'
 
-- include_tasks: install_dnf.yml
-  when:
-    ansible_os_family in ["RedHat"]
+- include_tasks: install_yum.yml
+  when: ansible_os_family == 'RedHat'
 
 - include_tasks: install_suse.yml
-  when: ansible_os_family in ["Suse"]
+  when: ansible_os_family == 'Suse'
 
 - include_tasks: template_deploy.yml

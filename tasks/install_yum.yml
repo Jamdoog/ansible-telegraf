@@ -9,11 +9,11 @@
     gpgkey: https://repos.influxdata.com/influxdb.key
 
 - name: Install GPG
-  dnf:
+  yum:
     name: gnupg
     state: present
 
 - name: Install Telegraf
-  ansible.builtin.dnf:
+  yum:
     name: telegraf
     state: latest
