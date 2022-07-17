@@ -25,6 +25,9 @@ The remote InfluxDB Username
 	REMOTE_PASSWORD: "password"
 The remote InfluxDB Password
 
+  TEMPLATE: "telegraf.conf"
+The template file you would like to deploy. This should represent a valid telegraf configuration file, with modifications for the above variables. 
+
 Dependencies
 ------------
 
@@ -42,6 +45,7 @@ Example Playbook
     REMOTE_DATABASE: "servers"
     REMOTE_USERNAME: "servers"
     REMOTE_PASSWORD: "password"
+    TEMPLATE: "telegraf.conf"
 
   roles:
     - role: jamdoog.telegraf
