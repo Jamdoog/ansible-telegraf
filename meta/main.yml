@@ -1,6 +1,6 @@
 galaxy_info:
   author: James Ledger
-  role_name: jtelegraf
+  role_name: telegraf
   description: Telegraf Install and Configuration
   company: 
 
