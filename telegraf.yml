@@ -2,6 +2,12 @@
 - name: Deploy Telegraf
   hosts: all
   become: true
+  handlers:
+    - name: telegraf
+      service: 
+        name: telegraf
+        state: reloaded
+        enabled: yes
   tasks:
     - name: Include tasks
       include_tasks: tasks/main.yml
