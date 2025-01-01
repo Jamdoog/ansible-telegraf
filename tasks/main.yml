@@ -5,7 +5,7 @@
 - include_tasks: install_yum.yml
   when: 
     - ansible_os_family == 'RedHat'
-    - not SATELLITE_SUBSCRIPTION
+    - SATELLITE_SUBSCRIPTION is defined and SATELLITE_SUBSCRIPTION is 'true'
 
 
 - include_tasks: install_suse.yml
