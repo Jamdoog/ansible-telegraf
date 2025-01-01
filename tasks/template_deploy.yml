@@ -1,7 +1,7 @@
 ---
 - name: Deploy Telegraf Template
   template: 
-    src: "{{ TEMPLATE }}"
+    src: telegraf.conf
     dest: /etc/telegraf/telegraf.conf
     owner: root
     group: root

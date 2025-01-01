@@ -13,7 +13,7 @@ Role Variables
 
 See: `defaults/main.yml`
 
-	REMOTE_IP: "http://192.168.200.1"
+	REMOTE_IP: "monitoring.example.com"
 The remote InfluxDB address
 
 	REMOTE_DATABASE: "servers"
@@ -24,9 +24,6 @@ The remote InfluxDB Username
 
 	REMOTE_PASSWORD: "password"
 The remote InfluxDB Password
-
-  TEMPLATE: "telegraf.conf"
-The template file you would like to deploy. This should represent a valid telegraf configuration file, with modifications for the above variables. 
 
   SATELLITE_SUBSCRIPTION: true/false
 Don't install from public repository on RHEL if this variable is present.
@@ -44,11 +41,10 @@ Example Playbook
   become: true
 
   vars:
-    REMOTE_IP: "https://192.168.50.1:8086"
+    REMOTE_IP: "monitoring.example.com"
     REMOTE_DATABASE: "servers"
     REMOTE_USERNAME: "servers"
     REMOTE_PASSWORD: "password"
-    TEMPLATE: "telegraf.conf"
 
   roles:
     - role: jamdoog.telegraf
