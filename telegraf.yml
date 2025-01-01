@@ -1,0 +1,7 @@
+---
+- name: Deploy Telegraf
+  hosts: all
+  become: true
+  tasks:
+    - name: Include tasks
+      include_tasks: tasks/main.yml
