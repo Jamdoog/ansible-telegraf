@@ -28,6 +28,9 @@ The remote InfluxDB Password
   TEMPLATE: "telegraf.conf"
 The template file you would like to deploy. This should represent a valid telegraf configuration file, with modifications for the above variables. 
 
+  SATELLITE_SUBSCRIPTION: true/false
+Don't install from public repository on RHEL if this variable is present.
+
 Dependencies
 ------------
 

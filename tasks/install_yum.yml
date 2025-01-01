@@ -12,8 +12,3 @@
   yum:
     name: gnupg
     state: present
-
-- name: Install Telegraf
-  yum:
-    name: telegraf
-    state: latest

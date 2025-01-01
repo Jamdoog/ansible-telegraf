@@ -29,9 +29,3 @@
     repo: 'deb https://repos.influxdata.com/"{{ ansible_distribution | lower }}" "{{ ansible_distribution_release }}" stable'
     state: present
     filename: influxdb
-
-- name: Install Telegraf
-  ansible.builtin.apt:
-    name: telegraf
-    update_cache: yes
-    state: latest
