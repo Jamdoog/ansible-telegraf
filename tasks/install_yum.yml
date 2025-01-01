@@ -12,3 +12,7 @@
   yum:
     name: gnupg
     state: present
+
+- name: Install GPG Key to RPM Database
+  rpm_key:
+    key: https://repos.influxdata.com/influxdb.key
